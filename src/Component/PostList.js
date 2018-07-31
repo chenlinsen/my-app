@@ -57,7 +57,6 @@ class PostList extends Component {
       posts
     });
   }
-  //以下是渲染页面....
   render() {
     return (
       <div className='container'>
