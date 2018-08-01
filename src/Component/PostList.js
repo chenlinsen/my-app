@@ -40,6 +40,7 @@ class PostList extends Component {
       });
     }, 1000);
   }
+  //组件卸载前调用的方法
   componentWillUnmount() {
     if (this.timer) {
       clearTimeout(this.timer); //清除定时器
