@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PostItem from "./PostItem";
+import UserControl from './UserControl';
 import "../Css/PostList.css"
 class PostList extends Component {
   constructor(props) {
@@ -62,12 +63,13 @@ class PostList extends Component {
   render() {
     return (
       <div className='container'>
-         <span style={{marginLeft:"50%"}}>BBS话题列表</span>
+        <span style={{marginLeft:"50%"}}>BBS话题列表</span>
         <ul>
           {this.state.posts.map(item => (
             <PostItem key={item.id} post={item} onVote={this.handleVote} />
           ))}
         </ul>
+        <UserControl/>
       </div>
     );
   }
