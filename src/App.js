@@ -1,18 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Modal from "./Component/Modal";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showModal: true };
+  }
+  closeModal = () => {
+    this.setState({ showModal: false });
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-         Hello World!!
-        </p>
+      <div>
+        <h2>Dashboard</h2>
+        {this.state.showModal && (
+          <Modal onClose={this.closeModal}>Modal Dialog</Modal>
+        )}
       </div>
     );
   }

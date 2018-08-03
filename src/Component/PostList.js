@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PostItem from "./PostItem";
-import UserControl from './UserControl';
 import "../Css/PostList.css"
 class PostList extends Component {
   constructor(props) {
@@ -49,7 +48,6 @@ class PostList extends Component {
   }
   handleVote(id) {
     //根据id进行过滤,找到待修改vote属性的帖子，返回新的posts对象
-    debugger
     const posts = this.state.posts.map(item => {
       const newItem = item.id === id ? { ...item, vote: ++item.vote } : item;
       return newItem;
@@ -69,7 +67,6 @@ class PostList extends Component {
             <PostItem key={item.id} post={item} onVote={this.handleVote} />
           ))}
         </ul>
-        <UserControl/>
       </div>
     );
   }
